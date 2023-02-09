@@ -1,0 +1,20 @@
+main p {
+  font-size: 18px;
+}
+
+.blog-img {
+  width: 100%;
+}
+
+article {
+  max-width: 800px;
+}
+
+h2 {
+  margin: 1rem 0;
+}
+
+article p {
+  margin: 1rem 0;
+}
+

@@ -1,0 +1,50 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Http\FormRequest;
+
+class AuthenticateRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function rules()
+    {
+        return [
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:6']
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'password' => 'senha'
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'email.required' =>'O :attribute é obrigatório!',
+            'password.required' =>'A :attribute é obrigatória!',
+            'password.min' => 'A :attribute deve ter pelo menos :min letras!',
+            'email.email' => 'O email deve ser um email válido!'
+        ];
+    }
+}
