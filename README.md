@@ -20,6 +20,21 @@ s
 $ git clone https://github.com/IBernardo-Rodrigues/larablog.git
 ```
 
+### Composer, key and storage link!
+
+Run the composer install
+```
+$ composer install
+```
+Then, generate a key for your project
+```
+$ php artisan key:generate
+```
+Now, you need to link the storage folder
+```
+$ php artisan storage:link
+```
+
 ### Then, edit your ".env.example" file!
 
 Config the ".env.example" to match your database and then rename to ".env"!
